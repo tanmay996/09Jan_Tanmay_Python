@@ -1,3 +1,4 @@
+# Table using loop
 var1 =int(input("Enter value :"))
 i =1
 while i <= 10:
