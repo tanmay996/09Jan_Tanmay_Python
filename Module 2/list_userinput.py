@@ -1,3 +1,4 @@
+#
 listvalue = int(input("Enter number how many data to store :"))
 data=[]
 for x in range(listvalue):
