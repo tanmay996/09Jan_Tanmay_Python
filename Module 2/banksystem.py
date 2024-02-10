@@ -1,86 +1,53 @@
-# account_name = input("Enter your account name : ")
-# account_number =int(input("Enter your account number : "))
-# acc_type = int(input("Enter 1 for Saving \nEnter 2 for current : "))
-# total_amount = int(input("Enter amount for deposite : "))
-
-# if acc_type == 1:
-#         account_type = "saving"
-# else:
-#         account_type = "cuurent"
-
-# def bankdata(account_name,account_number,account_type,total_amount):
-#         print("Account Holder :",account_name)
-#         print("Account Number :",account_number)
-#         print("Account Type :",account_type)
-#         print("Balance available :",total_amount)
-
-# if total_amount < 2000:
-#     print("Minimum balance should be deposit 2000")
-# else:
-#     withdraw_amount =int(input("Enter amount for withdraw : "))
-   
-
-#     if total_amount >= withdraw_amount:
-#             total_amount-=withdraw_amount
-#             print("Succefully withdraw : ",total_amount)
-#             bankdata(account_name,account_number,account_type,total_amount)
-    
-#     else:
-#              print("Insufficiant balance")
+accunt_no=""
+holder_name=""
+type=""
+total=0
+wthdrw=0
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-account_name:str
-account_number:int
-account_type:str
-def account_detail():
-    account_name = input("Enter your account name : ")
-    account_number =int(input("Enter your account number : "))
-    acc_type = int(input("Enter 1 for Saving \nEnter 2 for current : "))
-    if acc_type == 1:
-        account_type = "saving"
+def detail():
+    global accunt_no, holder_name, type
+    accunt_no = input("Enter Your account number : ")
+    holder_name = input("Enter Your account name : ")
+    accunt_type=int(input("Select account type \nEnter 1 for Current \nEnter 2 for Saving : "))
+    if accunt_type == 1:
+        type = "Current"
+    elif accunt_type == 2:
+        type = "Saving"
     else:
-        account_type = "cuurent"
+        type = "N/A"
 
-account_detail()
-print(account_name)
-
-# def deposit():
-#     total_amount = int(input("Enter amount for deposite : "))
-#     if total_amount < 2000:
-#      print("Minimum balance should be deposit 2000")
-#     else:
-#         withdraw()
-
-# def withdraw():
-        
-#         withdraw_amount =int(input("Enter amount for withdraw : "))
-
-#         if total_amount >= withdraw_amount:
-#             total_amount-=withdraw_amount
-#             print("Succefully withdraw : ",total_amount)
-          
+def deposit():
+    global total
+    deposit = int(input("Enter Amount for deposit : "))
+    if deposit < 2000:
+        print("Mnimum amount shoul be 2000")
+    else:
+        total = deposit
     
-#         else:
-#              print("Insufficiant balance")
 
+def withdraw():
+    global total,wthdrw
+    wthdrw = int(input("Enter Amount for Withdraw : "))
+    if wthdrw > total:
+        print("Insufficient Balance")
+    else:
+        total -= wthdrw
+
+
+
+def statements():
+    global accunt_no, holder_name, type, total
+    print("Your Account number : ",accunt_no)
+    print("Your Account name : ",holder_name)
+    print("Your Account type : ",type)
+    print("Your Bank Balance : ",total)
+
+detail()
+deposit()
+withdraw()
+statements()
 
 
 
