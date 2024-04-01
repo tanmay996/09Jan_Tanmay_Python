@@ -3,8 +3,10 @@
 # whole 'not'...'poor' substring with 'good'. Return the resulting string
 
 str1 = "Hello! not python is  so poor language"
+print(str1)
 loc1 = str1.find("not")
 loc2 = str1.find("poor")
+print(loc2)
 print(str1.replace(str1[loc1:loc2+4],"good"))
       
 
