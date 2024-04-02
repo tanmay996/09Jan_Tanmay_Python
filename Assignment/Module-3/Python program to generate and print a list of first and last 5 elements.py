@@ -1,11 +1,15 @@
-list =[1,2,3,4,5,6,7,8,9,11,22,12,25,16]
-newlist = list[0:6] + list[len(list) - 4 : len(list)]
-generatedlist = []
-for x in newlist:
-    for y in range(1,x):
-        if y * y == x:
-            generatedlist.append(x)
+list = []
+generatelist =[]
+
+for x in range(1,31):
+    list.append(x)
+
+newlist = list[0:5] + list[-5:]
+for x in range(0,len(newlist)):    
+    generatelist.append(newlist[x] ** 2)
+
+print(generatelist)
 
 
-print(list)
-print(generatedlist)
+
+    
